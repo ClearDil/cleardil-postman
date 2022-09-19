@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "bf1ecf49-65ff-4cc2-a9b6-67fd86db5652",
+		"_postman_id": "8fcd04f6-9f7a-4bdb-9b4e-1f266bca62fb",
 		"name": "Cleardil Web SDK",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "456866"
+		"_exporter_id": "8823358"
 	},
 	"item": [
 		{
@@ -237,6 +237,45 @@
 					"path": [
 						"sdk",
 						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check token status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{cleardil_url}}/sdk/token/{{accessTokenSdk}}/status",
+					"host": [
+						"{{cleardil_url}}"
+					],
+					"path": [
+						"sdk",
+						"token",
+						"{{accessTokenSdk}}",
+						"status"
 					]
 				}
 			},
