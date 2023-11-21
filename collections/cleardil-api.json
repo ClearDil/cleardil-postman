@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "1c8dd115-195c-492f-ba78-29c37b69b2b8",
+		"_postman_id": "98c898d2-78ad-4b1a-a51f-034a64e02b8d",
 		"name": "API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "456866"
 	},
 	"item": [
 		{
@@ -371,6 +372,269 @@
 								"customers",
 								"{{customer_a_id}}",
 								"screenings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create required ODD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (responseCode.code === 201){",
+									"    var jd = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"odd_a_id\", jd.id);",
+									"}",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessTokenUser}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"frequency\" : \"WEEKLY\",\n    \"scope\": [\"PEP\", \"WATCHLIST\"]\n}"
+						},
+						"url": {
+							"raw": "{{cleardil_url}}/customers/{{customer_a_id}}/odd",
+							"host": [
+								"{{cleardil_url}}"
+							],
+							"path": [
+								"customers",
+								"{{customer_a_id}}",
+								"odd"
+							]
+						},
+						"description": "Create Ongoing Due Diligence configurdation"
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch ODD configuration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (responseCode.code === 200){",
+									"    var jd = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"odd_a_id\", jd.id);",
+									"}",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessTokenUser}}"
+							}
+						],
+						"url": {
+							"raw": "{{cleardil_url}}/customers/{{customer_a_id}}/odd/{{odd_a_id}}",
+							"host": [
+								"{{cleardil_url}}"
+							],
+							"path": [
+								"customers",
+								"{{customer_a_id}}",
+								"odd",
+								"{{odd_a_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All ODD configuration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessTokenUser}}"
+							}
+						],
+						"url": {
+							"raw": "{{cleardil_url}}/customers/{{customer_a_id}}/odd",
+							"host": [
+								"{{cleardil_url}}"
+							],
+							"path": [
+								"customers",
+								"{{customer_a_id}}",
+								"odd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH update ODD configuration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessTokenUser}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\"op\": \"replace\", \"path\": \"/frequency\", \"value\": \"DAILY\"},\n  {\"op\": \"add\", \"path\": \"/scope/-\", \"value\" : \"DISQUALIFIED_ENTITIES\"},  \n  {\"op\": \"remove\", \"path\": \"/active\"}\n]\n"
+						},
+						"url": {
+							"raw": "{{cleardil_url}}/customers/{{customer_a_id}}/odd/{{odd_a_id}}",
+							"host": [
+								"{{cleardil_url}}"
+							],
+							"path": [
+								"customers",
+								"{{customer_a_id}}",
+								"odd",
+								"{{odd_a_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update ODD configuration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (responseCode.code === 200){",
+									"    var jd = JSON.parse(responseBody);",
+									"    postman.setEnvironmentVariable(\"odd_a_id\", jd.id);",
+									"}",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessTokenUser}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"frequency\" : \"MONTHLY\",\n    \"scope\": [\"PEP\", \"WATCHLIST\", \"ADVERSE_MEDIA\"],\n    \"active\" : true\n}\n"
+						},
+						"url": {
+							"raw": "{{cleardil_url}}/customers/{{customer_a_id}}/odd/{{odd_a_id}}",
+							"host": [
+								"{{cleardil_url}}"
+							],
+							"path": [
+								"customers",
+								"{{customer_a_id}}",
+								"odd",
+								"{{odd_a_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete ODD configuration",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessTokenUser}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{cleardil_url}}/customers/{{customer_a_id}}/odd/{{odd_a_id}}",
+							"host": [
+								"{{cleardil_url}}"
+							],
+							"path": [
+								"customers",
+								"{{customer_a_id}}",
+								"odd",
+								"{{odd_a_id}}"
 							]
 						}
 					},
