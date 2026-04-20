@@ -1,7 +1,7 @@
 # Introduction
 The [ClearDil](https://www.cleardil.com) API is designed for businesses that would like to automate their Know Your Customer (KYC) and Anti-Money Laundering (AML) processes.
 
-Our API endeavours to adhere to RESTfull principles and returns JSON for all responses including errors. For further information on the API, please refer to our [API Reference](https://reference.cleardil.com).
+Our API endeavours to adhere to RESTfull principles and returns JSON for all responses including errors. For further information on the API, please refer to our [API Reference](https://docs.cleardil.com/api_reference/).
 
 We designed our API demo to run with **Postman**, a REST client which helps making API calls with ease. We used Version 7.36.5 of Postman for this guide. However, the steps described below should be compatible with earlier or later Postman versions.
 
@@ -52,9 +52,9 @@ Next step is to import ClearDil's official Postman collections.
 # Collections
 Postman collections allow the grouping of API calls and thus automate the process of using our platform. We provide a couple of official Postman collections to help you get started testing as soon as possible:
 
-* **[The Demo Collection](/collections/cleardil-demo.json)** is designed to provide you with a quick overview of the ClearDil API using a set of scenario-cratfed API calls. 
+* **[The Demo Collection](/collections/cleardil-demo.json)** is designed to provide you with a quick overview of the ClearDil  using a set of scenario-cratfed  calls. 
 
-* **[The API Collection](/collections/cleardil-api.json)** is designed to provide you with a quick template for all available ClearDil API calls.
+* **[The  Collection](/collections/cleardil-.json)** is designed to provide you with a quick template for all available ClearDil  calls.
 
 To import our official Postman collections, click on the **Import** button in the top left corner, then select **Import File** tab.
 
