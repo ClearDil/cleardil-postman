@@ -5,7 +5,7 @@ Our API endeavours to adhere to RESTfull principles and returns JSON for all res
 
 We designed our API demo to run with **Postman**, a REST client which helps making API calls with ease. We used Version 7.36.5 of Postman for this guide. However, the steps described below should be compatible with earlier or later Postman versions.
 
-In order to use the API demo, you **must obtain Sandbox API Credentials** by completing the [Contact us Form](https://www.cleardil.com/#contact_us) on our website.
+In order to use the API demo, you **must obtain Sandbox API Credentials** by completing the [Contact us Form](https://www.cleardil.com/en/#contact) on our website.
 
 PS. We recommend that you consult our [step-by-step guide](https://docs.cleardil.com) as it provides a quick walkthrough of the capabilites of our API.
 
